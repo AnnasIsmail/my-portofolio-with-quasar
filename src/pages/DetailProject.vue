@@ -12,7 +12,20 @@
         style="animation-duration: 1s"
       >
         <div v-if="showElement">
-          <div class="text-h4 text-weight-bold q-pb-lg">Detail Projects</div>
+          <div class="text-h4 text-weight-bold q-pb-sm">Detail Projects</div>
+          <a
+            href="https://gconn.netlify.app/"
+            style="color: white"
+            target="_blank"
+            >https://gconn.netlify.app/</a
+          >
+          <br />
+          <a
+            href="https://github.com/AnnasIsmail/GCONN"
+            style="color: white"
+            target="_blank"
+            >https://github.com/AnnasIsmail/GCONN</a
+          >
           <carousel-component />
           <div class="q-py-md">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -25,21 +38,7 @@
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </div>
-          <div>
-            <q-img src="https://picsum.photos/500/300" :ratio="16 / 9" />
-            <q-card dark bordered class="bg-grey-9 my-card">
-              <q-card-section>
-                <div class="text-h6">Our Changing Planet</div>
-                <div class="text-subtitle2">by John Doe</div>
-              </q-card-section>
-
-              <q-separator dark inset />
-
-              <q-card-section>
-                {{ lorem }}
-              </q-card-section>
-            </q-card>
-          </div>
+          <detail-explain />
           <div class="text-h5 text-weight-bold q-pb-lg">Demo Video</div>
           <q-video
             :ratio="16 / 9"
@@ -52,12 +51,13 @@
 </template>
 
 <script lang="ts">
+import DetailExplain from 'src/components/DetailExplain.vue';
 import { defineComponent } from 'vue';
 import CarouselComponent from '../components/CarouselComponent.vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { CarouselComponent },
+  components: { CarouselComponent, DetailExplain },
   data() {
     return {
       styleFontTooltip:
