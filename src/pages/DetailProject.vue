@@ -25,6 +25,26 @@
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </div>
+          <div>
+            <q-img src="https://picsum.photos/500/300" :ratio="16 / 9" />
+            <q-card dark bordered class="bg-grey-9 my-card">
+              <q-card-section>
+                <div class="text-h6">Our Changing Planet</div>
+                <div class="text-subtitle2">by John Doe</div>
+              </q-card-section>
+
+              <q-separator dark inset />
+
+              <q-card-section>
+                {{ lorem }}
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="text-h5 text-weight-bold q-pb-lg">Demo Video</div>
+          <q-video
+            :ratio="16 / 9"
+            src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+          />
         </div>
       </transition>
     </q-intersection>
