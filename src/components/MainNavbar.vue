@@ -12,7 +12,7 @@
     <div
       class="text-h5 text-weight-bold"
       style="letter-spacing: 1px; cursor: pointer"
-      @click="movePage('/')"
+      @click="movePage('/', $route)"
     >
       Annas
     </div>
@@ -25,18 +25,24 @@
         padding-top: 4px;
       "
     >
-      <div class="child-navbar">Contact</div>
+      <div
+        class="child-navbar"
+        :class="{ 'on-page': $route.path === '/' }"
+        @click="movePage('/', this)"
+      >
+        Home
+      </div>
       <div
         class="child-navbar"
         :class="{ 'on-page': $route.path === '/skills' }"
-        @click="movePage('/skills')"
+        @click="movePage('/skills', this)"
       >
         Skills
       </div>
       <div
         class="child-navbar"
         :class="{ 'on-page': $route.path === '/projects' }"
-        @click="movePage('/projects')"
+        @click="movePage('/projects', this)"
       >
         Projects
       </div>
@@ -52,6 +58,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BurgerNavbar from './BurgerNavbar.vue';
+import { movePage } from '../functions/movePage';
 
 export default defineComponent({
   components: { BurgerNavbar },
@@ -60,15 +67,16 @@ export default defineComponent({
     return { isOpen: false };
   },
   methods: {
-    movePage(path: string) {
-      const element = document.getElementById('move-page');
-      if (element !== null) {
-        element.click();
-      }
-      setTimeout(() => {
-        this.$router.push(path);
-      }, 1000);
-    },
+    movePage,
+    //   movePage(path: string) {
+    //     const element = document.getElementById('move-page');
+    //     if (element !== null) {
+    //       element.click();
+    //     }
+    //     setTimeout(() => {
+    //       this.$router.push(path);
+    //     }, 1000);
+    //   },
   },
 });
 </script>

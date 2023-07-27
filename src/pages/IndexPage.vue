@@ -1,6 +1,6 @@
 <template>
   <q-page style="height: auto; overflow: hidden">
-    <input type="hidden" id="move-page" @click="movePage" />
+    <input type="hidden" id="move-page" @click="movePageDocument" />
     <q-intersection style="min-height: 500px" class="main-bio-intersection">
       <div
         class="main-bio"
@@ -309,6 +309,7 @@
               display: flex;
               border-radius: 8px;
             "
+            @click="movePage('/projects', this)"
           >
             <Icon icon="uiw:more" height="25px" />
             <div
@@ -328,6 +329,7 @@
 import { defineComponent, ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import ProjectsCard from '../components/ProjectsCard.vue';
+import { movePage } from '../functions/movePage';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -346,9 +348,6 @@ export default defineComponent({
   },
   mounted() {
     this.showElement = true;
-    // setTimeout(() => {
-    //   this.showElement = false;
-    // }, 2000);
   },
   unmounted() {
     this.showElement = false;
@@ -366,6 +365,10 @@ export default defineComponent({
     },
   },
   methods: {
+    movePage,
+    movePageDocument() {
+      this.showElement = false;
+    },
     searchTechnologies() {
       this.TechWID = this.TechWIDOrigin;
       if (this.filter) this.TechWID = this.filteredTechnologies;
@@ -377,9 +380,6 @@ export default defineComponent({
       if (this.search) this.TechWID = this.searchedTechnologies;
       if (!this.filter) return;
       this.TechWID = this.filteredTechnologies;
-    },
-    movePage() {
-      this.showElement = false;
     },
   },
   setup() {
