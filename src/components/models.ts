@@ -16,3 +16,9 @@ export interface ProjectsCard {
   urlImage: string;
 }
 
+export interface DetailExplain {
+  name: string;
+  path: string;
+  right?: boolean;
+  description: string;
+}
