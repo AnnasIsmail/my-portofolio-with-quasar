@@ -211,9 +211,7 @@
               class="text-body text-weight-regular"
               style="margin-top: 20px; color: #d6d6d6"
             >
-              Build and maintain websites, frontend dev also have a mentorship
-              called MOFON. My motto is Beauty and function in equal measure as
-              priority.
+              I am a full-stack web developer dedicated to creating stunning and highly functional web experiences. In addition to being proficient in building and maintaining websites, I also have a mentorship program called 'WebCrafters.' My philosophy is 'Combining beauty and functionality as the top priority.
             </div>
           </div>
           <div>
