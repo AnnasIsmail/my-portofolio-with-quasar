@@ -22,3 +22,10 @@ export interface DetailExplain {
   right?: boolean;
   description: string;
 }
+
+export interface Skill {
+  name: string;
+  link: string;
+  icon: string;
+  type: string;
+}

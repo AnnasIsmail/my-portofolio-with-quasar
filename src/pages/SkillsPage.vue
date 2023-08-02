@@ -81,6 +81,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { Icon } from '@iconify/vue';
+import { Skill } from 'src/components/models';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -157,7 +158,7 @@ export default defineComponent({
         link: 'https://laravel.com/',
       },
     ];
-    const TechWIDOrigin = [
+    const TechWIDOrigin: Skill[] = [
       {
         name: 'Bootstrap',
         link: 'https://getbootstrap.com/',
@@ -273,6 +274,7 @@ export default defineComponent({
         type: 'language',
       },
     ];
+
     const filterType = ['Language', 'Framework', 'Library', 'Database', 'Tool'];
     const dataProjects = [
       {
