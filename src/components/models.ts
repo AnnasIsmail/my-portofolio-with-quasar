@@ -23,9 +23,15 @@ export interface DetailExplain {
   description: string;
 }
 
+// interface MyProjects {
+//   title:string,
+//   url: string;
+// }
 export interface Skill {
   name: string;
   link: string;
   icon: string;
   type: string;
+  // MyProjects: MyProjects[];
 }
+
