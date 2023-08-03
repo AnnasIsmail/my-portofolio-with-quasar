@@ -52,7 +52,7 @@ export const skills: Skill[] = [
   {
     name: 'PHP',
     link: 'https://www.php.net/',
-    icon: 'logos:php',
+    icon: 'devicon:php',
     type: 'language',
   },
   {

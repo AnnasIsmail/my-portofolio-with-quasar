@@ -211,7 +211,11 @@
               class="text-body text-weight-regular"
               style="margin-top: 20px; color: #d6d6d6"
             >
-              I am a full-stack web developer dedicated to creating stunning and highly functional web experiences. In addition to being proficient in building and maintaining websites, I also have a mentorship program called 'WebCrafters.' My philosophy is 'Combining beauty and functionality as the top priority.
+              I am a full-stack web developer dedicated to creating stunning and
+              highly functional web experiences. In addition to being proficient
+              in building and maintaining websites, I also have a mentorship
+              program called 'WebCrafters.' My philosophy is 'Combining beauty
+              and functionality as the top priority.
             </div>
           </div>
           <div>
@@ -245,33 +249,11 @@
                   justify-content: center;
                 "
               >
-                <div
+                <chip-technology
                   v-for="tech in TechWID"
                   :key="tech.name"
-                  style="
-                    background-color: #fbfbfb;
-                    height: 50px;
-                    border-radius: 10px;
-                    display: flex;
-                    padding: 5px;
-                    margin-bottom: 10px;
-                  "
-                >
-                  <a
-                    :href="tech.link"
-                    target="_blank"
-                    style="margin: auto; height: 30px"
-                  >
-                    <Icon :icon="tech.icon" height="30px" />
-                    <q-tooltip
-                      transition-show="rotate"
-                      transition-hide="rotate"
-                      style="background-color: #272727"
-                    >
-                      <span :style="styleFontTooltip">{{ tech.name }}</span>
-                    </q-tooltip>
-                  </a>
-                </div>
+                  :Skill="tech"
+                />
               </q-card-section>
               <q-card-section style="padding-top: 0">
                 <div class="text-body" style="color: #b0b1b7">
@@ -328,14 +310,16 @@ import { defineComponent, ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import ProjectsCard from '../components/ProjectsCard.vue';
 import { movePage } from '../functions/movePage';
-import {skills} from '../data/Skills';
-import {Skill} from '../components/models'
+import { skills } from '../data/Skills';
+import { Skill } from '../components/models';
+import ChipTechnology from 'src/components/ChipTechnology.vue';
 
 export default defineComponent({
   name: 'IndexPage',
   components: {
     Icon,
     ProjectsCard,
+    ChipTechnology,
   },
   data() {
     return {
@@ -353,7 +337,7 @@ export default defineComponent({
     this.showElement = false;
   },
   computed: {
-    searchedTechnologies() : Skill[] {
+    searchedTechnologies(): Skill[] {
       return this.TechWID.filter((tech) =>
         tech.name.toLowerCase().includes(this.search.toLowerCase())
       );
