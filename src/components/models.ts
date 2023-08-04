@@ -28,10 +28,10 @@ export interface DetailExplain {
 //   url: string;
 // }
 export interface Skill {
+  id: string;
   name: string;
   link: string;
   icon: string;
   type: string;
   // MyProjects: MyProjects[];
 }
-
