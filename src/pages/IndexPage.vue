@@ -1,5 +1,15 @@
 <template>
   <q-page style="height: auto; overflow: hidden">
+    <q-icon id="notification" style="position: fixed; left: calc(50vw - 118px)">
+      <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
+        <q-banner class="bg-red text-white">
+          <template v-slot:avatar>
+            <q-icon name="warning" />
+          </template>
+          Under Development
+        </q-banner>
+      </q-popup-proxy>
+    </q-icon>
     <input type="hidden" id="move-page" @click="movePageDocument" />
     <q-intersection style="min-height: 500px" class="main-bio-intersection">
       <div
@@ -332,6 +342,7 @@ export default defineComponent({
   },
   mounted() {
     this.showElement = true;
+    document.getElementById('notification')?.click();
   },
   unmounted() {
     this.showElement = false;
