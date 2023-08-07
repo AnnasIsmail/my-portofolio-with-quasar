@@ -7,7 +7,7 @@ export interface Meta {
   totalCount: number;
 }
 
-export interface ProjectsCard {
+export interface Project {
   name: string;
   type: string;
   description: string;

@@ -288,7 +288,7 @@
             <projects-card
               v-for="data in dataProjects"
               :key="data.name"
-              :ProjectsCard="data"
+              :Project="data"
             />
           </div>
           <q-btn

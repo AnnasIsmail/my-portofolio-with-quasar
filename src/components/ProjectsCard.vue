@@ -51,7 +51,7 @@
         </q-btn>
       </div>
       <q-img
-        :src="ProjectsCard.urlImage"
+        :src="Project.urlImage"
         alt="asd"
         width="90%"
         style="margin auto; cursor: pointer;"
@@ -60,14 +60,14 @@
     </div>
     <div style="padding: 20px">
       <div class="text-subtitle2 q-pb-xs">
-        {{ ProjectsCard.type }}
+        {{ Project.type }}
       </div>
       <div
         class="text-h4 text-weight-bold"
         style="cursor: pointer"
         @click="movePage('/detail-project', this)"
       >
-        {{ ProjectsCard.name }}
+        {{ Project.name }}
       </div>
       <div
         class="text-body text-weight-regular"
@@ -80,7 +80,7 @@
           -webkit-line-clamp: 5; /* Jumlah baris maksimal yang diinginkan */
         "
       >
-        {{ ProjectsCard.description }}
+        {{ Project.description }}
       </div>
     </div>
   </div>
@@ -89,14 +89,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Icon } from '@iconify/vue';
-import { ProjectsCard } from './models';
+import { Project } from './models';
 import { movePage } from '../functions/movePage';
 
 export default defineComponent({
-  name: 'ProjectsCard',
+  name: 'ProjectCard',
   props: {
-    ProjectsCard: {
-      type: Object as () => ProjectsCard,
+    Project: {
+      type: Object as () => Project,
       required: true,
     },
   },
