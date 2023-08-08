@@ -320,9 +320,10 @@ import { defineComponent, ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import ProjectsCard from '../components/ProjectsCard.vue';
 import { movePage } from '../functions/movePage';
-import { skills } from '../data/Skills';
-import { Skill } from '../components/models';
+import Skills from '../data/Skills';
+import { Project, Skill } from '../components/models';
 import ChipTechnology from 'src/components/ChipTechnology.vue';
+import Projects from 'src/data/Projects';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -400,40 +401,9 @@ export default defineComponent({
         link: 'https://laravel.com/',
       },
     ];
-    const TechWIDOrigin = skills as Skill[];
+    const TechWIDOrigin = Skills as Skill[];
     const filterType = ['Language', 'Framework', 'Library', 'Database', 'Tool'];
-    const dataProjects = [
-      {
-        name: 'GCONN',
-        type: 'Web Development',
-        description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the ",
-        url: 'https://gconn.netlify.app/',
-        urlGithub: 'https://github.com/AnnasIsmail/GCONN',
-        urlImage:
-          'https://annasismail.github.io/My-Portofolio/assets/img/portfolio/gconn.png',
-      },
-      {
-        name: 'GCONN',
-        type: 'Web Development',
-        description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the ",
-        url: 'https://gconn.netlify.app/',
-        urlGithub: 'https://github.com/AnnasIsmail/GCONN',
-        urlImage:
-          'https://annasismail.github.io/My-Portofolio/assets/img/portfolio/gconn.png',
-      },
-      {
-        name: 'GCONN',
-        type: 'Web Development',
-        description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the ",
-        url: 'https://gconn.netlify.app/',
-        urlGithub: 'https://github.com/AnnasIsmail/GCONN',
-        urlImage:
-          'https://annasismail.github.io/My-Portofolio/assets/img/portfolio/gconn.png',
-      },
-    ];
+    const dataProjects = Projects as Project[];
     return {
       biographySkills,
       TechWIDOrigin,

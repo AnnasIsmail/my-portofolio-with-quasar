@@ -1,6 +1,4 @@
-import { Skill } from '../components/models';
-
-export const skills: Skill[] = [
+export default [
   {
     id: '64cd01363807d1327729473e',
     name: 'Bootstrap',

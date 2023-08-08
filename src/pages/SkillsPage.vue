@@ -15,7 +15,7 @@
           <div class="text-h4 text-weight-bold q-pb-lg">Skills</div>
           <div class="flex q-mb-md" style="gap: 20px">
             <detail-skill
-              v-for="data in skills"
+              v-for="data in Skills"
               :key="data.name"
               :Skill="data"
             />
@@ -30,7 +30,7 @@
 import { defineComponent, ref } from 'vue';
 import { Skill } from '../components/models';
 import DetailSkill from 'src/components/DetailSkill.vue';
-import { skills } from '../data/Skills';
+import Skills from '../data/Skills';
 
 export default defineComponent({
   name: 'SkillPage',
@@ -42,7 +42,7 @@ export default defineComponent({
       search: '',
       filter: '',
       showElement: false,
-      skills,
+      Skills,
     };
   },
   mounted() {
@@ -103,7 +103,7 @@ export default defineComponent({
         link: 'https://laravel.com/',
       },
     ];
-    const TechWIDOrigin = skills as Skill[];
+    const TechWIDOrigin = Skills as Skill[];
 
     const filterType = ['Language', 'Framework', 'Library', 'Database', 'Tool'];
     const dataProjects = [
