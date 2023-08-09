@@ -36,6 +36,8 @@
             display: flex;
             border-radius: 8px;
           "
+          :href="Project.urlGithub"
+          target="_blank"
         >
           <Icon icon="mdi:code" height="23px" />
         </q-btn>
@@ -46,6 +48,8 @@
             display: flex;
             border-radius: 8px;
           "
+          :href="Project.url"
+          target="_blank"
         >
           <Icon icon="ic:outline-arrow-outward" height="23px" />
         </q-btn>
@@ -75,10 +79,12 @@
           margin-top: 20px;
           color: #d6d6d6;
           overflow: hidden;
+          cursor: pointer;
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 5; /* Jumlah baris maksimal yang diinginkan */
+          -webkit-line-clamp: 5;
         "
+        @click="movePage('/detail-project', this)"
       >
         {{ Project.description }}
       </div>
