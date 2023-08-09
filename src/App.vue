@@ -2,14 +2,20 @@
   <q-icon
     id="notification"
     v-if="popUp"
-    style="position: fixed; left: calc(50vw - 118px)"
+    style="position: fixed; left: calc(50vw - 219px)"
   >
     <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
       <q-banner class="bg-red text-white">
         <template v-slot:avatar>
           <q-icon name="warning" />
         </template>
-        Under Development
+        Under Development, or visit
+        <a
+          style="color: white"
+          href="https://annasismail.github.io/My-Portofolio/"
+        >
+          my old portfolio website </a
+        >.
       </q-banner>
     </q-popup-proxy>
   </q-icon>
@@ -27,7 +33,7 @@ export default defineComponent({
     };
   },
   mounted() {
-    setTimeout(() => (this.popUp = false), 5000);
+    setTimeout(() => (this.popUp = false), 10000);
   },
 });
 </script>

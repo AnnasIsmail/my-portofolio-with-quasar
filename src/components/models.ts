@@ -33,5 +33,6 @@ export interface Skill {
   link: string;
   icon: string;
   type: string;
+  description: string;
   // MyProjects: MyProjects[];
 }

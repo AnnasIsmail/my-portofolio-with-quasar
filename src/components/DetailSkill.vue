@@ -49,13 +49,7 @@
         {{ Skill.type }}
       </div>
       <div class="text-body2">
-        React.js adalah pustaka JavaScript yang populer untuk membangun
-        antarmuka pengguna (UI) interaktif dan responsif. Dengan pendekatan
-        komponen, rendering efisien menggunakan Virtual DOM, dan dukungan JSX,
-        React.js memungkinkan pengembang untuk membuat kode yang mudah
-        dipelihara dan efisien. Aliran data satu arah, ekosistem yang kuat, dan
-        komunitas yang aktif membuat React.js menjadi pilihan utama untuk
-        pengembangan aplikasi web modern.
+        {{ Skill.description }}
       </div>
     </div>
   </div>
