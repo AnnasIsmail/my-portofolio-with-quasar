@@ -55,11 +55,11 @@
         </q-btn>
       </div>
       <q-img
-        :src="Project.urlImage"
+        :src="Project.image[0]"
         alt="asd"
         width="90%"
         style="margin auto; cursor: pointer;"
-        @click="movePage('/detail-project', this)"
+        @click="movePageToDetail"
       />
     </div>
     <div style="padding: 20px">
@@ -69,7 +69,7 @@
       <div
         class="text-h4 text-weight-bold"
         style="cursor: pointer"
-        @click="movePage('/detail-project', this)"
+        @click="movePageToDetail"
       >
         {{ Project.name }}
       </div>
@@ -84,7 +84,7 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 5;
         "
-        @click="movePage('/detail-project', this)"
+        @click="movePageToDetail"
       >
         {{ Project.description }}
       </div>
@@ -116,7 +116,9 @@ export default defineComponent({
     };
   },
   methods: {
-    movePage,
+    movePageToDetail() {
+      movePage(`/detail-project/${this.Project.id}`, this);
+    },
   },
 });
 </script>

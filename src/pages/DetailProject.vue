@@ -12,38 +12,37 @@
         style="animation-duration: 1s"
       >
         <div v-if="showElement">
-          <div class="text-h4 text-weight-bold q-pb-sm">Detail Projects</div>
-          <a
-            href="https://gconn.netlify.app/"
-            style="color: white"
-            target="_blank"
-            >https://gconn.netlify.app/</a
-          >
-          <br />
-          <a
-            href="https://github.com/AnnasIsmail/GCONN"
-            style="color: white"
-            target="_blank"
-            >https://github.com/AnnasIsmail/GCONN</a
-          >
-          <carousel-component />
-          <div class="q-py-md">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <div class="text-h4 text-weight-bold">{{ Project.name }}</div>
+          <div class="text-subtitle1 q-pb-sm">
+            {{ Project.type }}
           </div>
-          <detail-explain :DetailExplain="DetailExplain" />
-          <div class="text-h5 text-weight-bold q-pb-lg">Demo Video</div>
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-          />
+          <carousel-component :Photo="Project.image" />
+          <div v-if="Project.url">
+            <span class="text-body1"> Link Website: </span>
+            <a :href="Project.url" style="color: white" target="_blank">{{
+              Project.url
+            }}</a>
+          </div>
+          <div>
+            <span class="text-body1"> Link Source Code: </span>
+            <a :href="Project.urlGithub" style="color: white" target="_blank">{{
+              Project.urlGithub
+            }}</a>
+          </div>
+          <div class="q-py-md">
+            {{ Project.description }}
+          </div>
+          <div v-if="Project.DetailExplain">
+            <div class="text-h5 text-weight-bold q-pb-lg">Feature</div>
+            <detail-explain :DetailExplain="DetailExplain" />
+            <div v-if="Project.demoVideo">
+              <div class="text-h5 text-weight-bold q-pb-lg">Demo Video</div>
+              <q-video
+                :ratio="16 / 9"
+                src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+              />
+            </div>
+          </div>
         </div>
       </transition>
     </q-intersection>
@@ -54,12 +53,16 @@
 import DetailExplain from 'src/components/DetailExplain.vue';
 import { defineComponent } from 'vue';
 import CarouselComponent from '../components/CarouselComponent.vue';
+import Projects from 'src/data/Projects';
+import { Project } from '../components/models';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { CarouselComponent, DetailExplain },
   data() {
     return {
+      id: this.$route.params.id,
+      Project: {} as Project,
       styleFontTooltip:
         'background-image: linear-gradient(to bottom right,rgba(59, 246, 134, 1) 40%,rgba(76, 169, 255, 1) 60%);background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent;',
       search: '',
@@ -81,6 +84,14 @@ export default defineComponent({
         path: '/home',
       },
     };
+  },
+  created() {
+    const projectFound = Projects.find((project) => project.id === this.id);
+    if (!projectFound) {
+      this.$router.push('/404');
+    } else {
+      this.Project = projectFound;
+    }
   },
   mounted() {
     this.showElement = true;

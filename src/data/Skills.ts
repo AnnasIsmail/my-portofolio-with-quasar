@@ -1,4 +1,5 @@
-export default [
+import { Skill } from '../components/models';
+const Skills: Skill[] = [
   {
     id: '64cd01363807d1327729473e',
     name: 'Bootstrap',
@@ -171,3 +172,5 @@ export default [
       'TypeScript is a superset of JavaScript that adds static typing and other features to enhance developer productivity and code quality. It can be compiled to plain JavaScript for browser compatibility.',
   },
 ];
+
+export default Skills;

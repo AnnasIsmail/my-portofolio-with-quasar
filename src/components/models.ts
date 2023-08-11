@@ -8,12 +8,15 @@ export interface Meta {
 }
 
 export interface Project {
+  id: string;
   name: string;
   type: string;
   description: string;
-  url: string;
+  url?: string;
   urlGithub: string;
-  urlImage: string;
+  image: string[];
+  demoVideo?: string;
+  DetailExplain?: DetailExplain[];
 }
 
 export interface DetailExplain {
@@ -23,10 +26,6 @@ export interface DetailExplain {
   description: string;
 }
 
-// interface MyProjects {
-//   title:string,
-//   url: string;
-// }
 export interface Skill {
   id: string;
   name: string;
@@ -34,5 +33,4 @@ export interface Skill {
   icon: string;
   type: string;
   description: string;
-  // MyProjects: MyProjects[];
 }

@@ -2,21 +2,11 @@
   <div class="q-pa-md">
     <q-carousel swipeable arrows animated v-model="slide" thumbnails infinite>
       <q-carousel-slide
+        v-for="src in Photo"
+        :key="src"
         :name="1"
-        img-src="https://cdn.quasar.dev/img/mountains.jpg"
-        style="max-width: 790px; margin: auto"
-      />
-      <q-carousel-slide
-        :name="2"
-        img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-      />
-      <q-carousel-slide
-        :name="3"
-        img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-      />
-      <q-carousel-slide
-        :name="4"
-        img-src="https://cdn.quasar.dev/img/quasar.jpg"
+        :img-src="src"
+        style="max-width: 850px; margin: auto"
       />
     </q-carousel>
   </div>
@@ -26,6 +16,13 @@
 import { ref } from 'vue';
 
 export default {
+  name: 'CarouselComponent',
+  props: {
+    Photo: {
+      type: [String, Array],
+      required: true,
+    },
+  },
   setup() {
     return {
       slide: ref(1),

@@ -67,3 +67,4 @@ export default defineComponent({
 </script>
 
 <style scoped></style>
+src/data/projects
