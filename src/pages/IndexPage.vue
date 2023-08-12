@@ -36,8 +36,8 @@
             "
             v-if="showElement"
           >
-            Hello, I'm Annas, an ordinary human who enjoys learning and working
-            in teams. My hobby is coding.
+            Hello, I'm Annas, Innovative fullstack developer, enthusiastic about
+            teamwork and creating technological solutions.
           </div>
         </transition>
         <transition
