@@ -9,6 +9,14 @@ const projects: Project[] = [
     url: 'https://gconn.netlify.app/',
     urlGithub: 'https://github.com/AnnasIsmail/GCONN',
     image: [require('../assets/gconn.png')],
+    technology: [
+      '64cd01363807d1327729473e',
+      '64cd01363807d1327729473f',
+      '64cd01363807d13277294741',
+      '64cd01363807d13277294744',
+      '64cd01363807d1327729474c',
+      '64cd01363807d1327729474f',
+    ],
   },
   {
     id: '64d45aa55a97fc4efd8a8076',
@@ -19,6 +27,13 @@ const projects: Project[] = [
     url: 'https://account-nguk.netlify.app/',
     urlGithub: 'https://github.com/AnnasIsmail/account-nguk-react',
     image: [require('../assets/account-nguk_dashboard.png')],
+    technology: [
+      '64cd01363807d1327729474c',
+      '64cd01363807d13277294747',
+      '64cd01363807d13277294744',
+      '64cd01363807d13277294741',
+      '64cd01363807d1327729473f',
+    ],
   },
   {
     id: '64551d8ff0ff386cc51044c5',
@@ -29,6 +44,11 @@ const projects: Project[] = [
     url: 'https://annas-ismail-muhammad-portofolio.netlify.app/#/',
     urlGithub: 'https://github.com/AnnasIsmail/my-portofolio-with-quasar',
     image: [require('../assets/my-portfolio.png')],
+    technology: [
+      '64cd01363807d13277294740',
+      '64cd01363807d13277294744',
+      '64cd01363807d13277294748',
+    ],
   },
 ];
 

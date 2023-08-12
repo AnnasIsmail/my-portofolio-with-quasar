@@ -17,6 +17,7 @@ export interface Project {
   image: string[];
   demoVideo?: string;
   DetailExplain?: DetailExplain[];
+  technology: string[];
 }
 
 export interface DetailExplain {

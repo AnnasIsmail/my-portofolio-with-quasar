@@ -31,7 +31,7 @@ const Skills: Skill[] = [
     id: '64cd01363807d13277294741',
     name: 'Node JS',
     link: 'https://nodejs.org/',
-    icon: 'logos:nodejs',
+    icon: 'logos:nodejs-icon-alt',
     type: 'framework',
     description:
       'Node.js is a runtime environment that allows developers to execute JavaScript on the server side. It is built on the V8 JavaScript engine and enables non-blocking, event-driven I/O operations.',
@@ -121,7 +121,7 @@ const Skills: Skill[] = [
     id: '64cd01363807d1327729474b',
     name: 'MySQL',
     link: 'https://www.mysql.com/',
-    icon: 'logos:mysql',
+    icon: 'vscode-icons:file-type-mysql',
     type: 'database',
     description:
       'MySQL is an open-source relational database management system. It is commonly used for storing and managing structured data in various types of applications.',

@@ -281,24 +281,26 @@
               :Project="data"
             />
           </div>
-          <q-btn
-            style="
-              background-color: #3f4152;
-              padding: 5px;
-              width: 120px;
-              display: flex;
-              border-radius: 8px;
-            "
-            @click="movePage('/projects', this)"
-          >
-            <Icon icon="uiw:more" height="25px" />
-            <div
-              class="text-caption q-pl-sm"
-              style="text-transform: capitalize"
+          <div style="width: 100%; display: flex; justify-content: center">
+            <q-btn
+              style="
+                background-color: #3f4152;
+                padding: 5px;
+                width: 130px;
+                display: flex;
+                border-radius: 8px;
+              "
+              @click="movePage('/projects', this)"
             >
-              See More
-            </div>
-          </q-btn>
+              <Icon icon="uiw:more" height="28px" />
+              <div
+                class="text-caption q-pl-sm"
+                style="text-transform: capitalize; font-size: 14px"
+              >
+                See More
+              </div>
+            </q-btn>
+          </div>
         </div>
       </transition>
     </q-intersection>
@@ -487,4 +489,3 @@ export default defineComponent({
   }
 }
 </style>
-src/data/projects

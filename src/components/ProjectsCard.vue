@@ -88,6 +88,17 @@
       >
         {{ Project.description }}
       </div>
+      <div>
+        <q-card-section
+          style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px"
+        >
+          <chip-technology
+            v-for="tech in Project.technology"
+            :key="tech"
+            :Skill="getTechnology(tech)"
+          />
+        </q-card-section>
+      </div>
     </div>
   </div>
 </template>
@@ -97,6 +108,8 @@ import { defineComponent } from 'vue';
 import { Icon } from '@iconify/vue';
 import { Project } from './models';
 import { movePage } from '../functions/movePage';
+import ChipTechnology from 'src/components/ChipTechnology.vue';
+import Skills from 'src/data/Skills';
 
 export default defineComponent({
   name: 'ProjectCard',
@@ -108,16 +121,21 @@ export default defineComponent({
   },
   components: {
     Icon,
+    ChipTechnology,
   },
   data() {
     return {
       styleFontTooltip:
         'background-image: linear-gradient(to bottom right,rgba(59, 246, 134, 1) 40%,rgba(76, 169, 255, 1) 60%);background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent;',
+      Skills,
     };
   },
   methods: {
     movePageToDetail() {
       movePage(`/detail-project/${this.Project.id}`, this);
+    },
+    getTechnology(id: string) {
+      return Skills.find((data) => data.id === id);
     },
   },
 });
