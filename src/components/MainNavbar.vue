@@ -46,6 +46,13 @@
       >
         Projects
       </div>
+      <div
+        class="child-navbar"
+        :class="{ 'on-page': $route.path === '/about' }"
+        @click="movePage('/about', this)"
+      >
+        About
+      </div>
     </div>
     <burger-navbar
       class="Mobile-Navigation"
