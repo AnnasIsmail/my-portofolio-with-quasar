@@ -34,13 +34,6 @@
       </div>
       <div
         class="child-navbar"
-        :class="{ 'on-page': $route.path === '/skills' }"
-        @click="movePage('/skills', this)"
-      >
-        Skills
-      </div>
-      <div
-        class="child-navbar"
         :class="{ 'on-page': $route.path === '/projects' }"
         @click="movePage('/projects', this)"
       >
