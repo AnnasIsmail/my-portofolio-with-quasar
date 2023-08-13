@@ -187,142 +187,21 @@
         </transition>
       </div>
     </q-intersection>
-    <q-intersection style="min-height: 400px" class="second-bio-intersection">
-      <transition
-        appear
-        enter-active-class="animated zoomInDown"
-        leave-active-class="animated zoomOutUp"
-        style="animation-duration: 1s"
-      >
-        <div
-          class="technology"
-          style="
-            margin: 70px 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            align-items: center;
-          "
-          v-if="showElement"
-        >
-          <div>
-            <div class="text-h5 text-weight-bold">What I do</div>
-            <div
-              class="text-body text-weight-regular"
-              style="margin-top: 20px; color: #d6d6d6"
-            >
-              I am a full-stack web developer dedicated to creating stunning and
-              highly functional web experiences. In addition to being proficient
-              in building and maintaining websites, I also have a mentorship
-              program called 'WebCrafters.' My philosophy is 'Combining beauty
-              and functionality as the top priority.
-            </div>
-          </div>
-          <div>
-            <div style="background: #323443; border-radius: 20px">
-              <q-card-section
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
-              >
-                <q-input
-                  filled
-                  v-model="search"
-                  label="Search"
-                  placeholder="React"
-                  @update:model-value="searchTechnologies"
-                />
-                <q-select
-                  clearable
-                  filled
-                  v-model="filter"
-                  :options="filterType"
-                  label="Filter"
-                  style="width: 100%"
-                  @update:model-value="filterTechnologies"
-                />
-              </q-card-section>
-              <q-card-section
-                style="
-                  display: flex;
-                  flex-direction: row;
-                  flex-wrap: wrap;
-                  gap: 10px;
-                  justify-content: center;
-                "
-              >
-                <chip-technology
-                  v-for="tech in TechWID"
-                  :key="tech.name"
-                  :Skill="tech"
-                />
-              </q-card-section>
-              <q-card-section style="padding-top: 0">
-                <div class="text-body" style="color: #b0b1b7">
-                  {{ TechWID.length }} Result
-                </div>
-              </q-card-section>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </q-intersection>
-    <q-intersection style="min-height: 500px" class="main-bio-intersection">
-      <transition
-        appear
-        enter-active-class="animated backInUp"
-        leave-active-class="animated backOutDown"
-        style="animation-duration: 1s"
-      >
-        <div v-if="showElement">
-          <div class="text-h4 text-weight-bold q-pb-lg">Projects</div>
-          <div class="flex q-mb-md" style="gap: 20px">
-            <projects-card
-              v-for="data in dataProjects"
-              :key="data.name"
-              :Project="data"
-            />
-          </div>
-          <div style="width: 100%; display: flex; justify-content: center">
-            <q-btn
-              style="
-                background-color: #3f4152;
-                padding: 5px;
-                width: 130px;
-                display: flex;
-                border-radius: 8px;
-              "
-              @click="movePage('/projects', this)"
-            >
-              <Icon icon="uiw:more" height="28px" />
-              <div
-                class="text-caption q-pl-sm"
-                style="text-transform: capitalize; font-size: 14px"
-              >
-                See More
-              </div>
-            </q-btn>
-          </div>
-        </div>
-      </transition>
-    </q-intersection>
   </q-page>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import ProjectsCard from '../components/ProjectsCard.vue';
 import { movePage } from '../functions/movePage';
 import Skills from '../data/Skills';
 import { Project, Skill } from '../components/models';
-import ChipTechnology from 'src/components/ChipTechnology.vue';
 import Projects from 'src/data/Projects';
 
 export default defineComponent({
   name: 'IndexPage',
   components: {
     Icon,
-    ProjectsCard,
-    ChipTechnology,
   },
   data() {
     return {

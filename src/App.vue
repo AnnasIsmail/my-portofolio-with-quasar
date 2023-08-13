@@ -37,3 +37,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+@media (max-width: 1200px) {
+  #notification {
+    top: 90px;
+  }
+}
+</style>

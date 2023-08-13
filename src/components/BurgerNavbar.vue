@@ -1,6 +1,8 @@
 <template>
-  <div class="menu-btn" :class="{ open: isOpen }">
-    <div class="menu-btn__burger"></div>
+  <div>
+    <div class="menu-btn" :class="{ open: isOpen }">
+      <div class="menu-btn__burger"></div>
+    </div>
   </div>
 </template>
 <script lang="ts">

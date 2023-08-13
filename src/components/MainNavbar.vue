@@ -54,11 +54,42 @@
         About
       </div>
     </div>
-    <burger-navbar
-      class="Mobile-Navigation"
-      :isOpen="isOpen"
-      @click="isOpen = !isOpen"
-    />
+    <div class="Mobile-Navigation">
+      <burger-navbar :isOpen="isOpen" @click="isOpen = !isOpen" />
+      <q-menu
+        @show="isOpen = true"
+        @hide="isOpen = false"
+        :visible="isOpen"
+        transition-show="rotate"
+        transition-hide="rotate"
+        style="right: 25px !important"
+        id="menu-mobile-navigation"
+      >
+        <q-list style="min-width: 150px">
+          <q-item clickable>
+            <q-item-section
+              @click="movePage('/', this)"
+              :class="{ 'on-page': $route.path === '/' }"
+              >Home</q-item-section
+            >
+          </q-item>
+          <q-item clickable>
+            <q-item-section
+              @click="movePage('/projects', this)"
+              :class="{ 'on-page': $route.path === '/projects' }"
+              >Projects</q-item-section
+            >
+          </q-item>
+          <q-item clickable>
+            <q-item-section
+              @click="movePage('/about', this)"
+              :class="{ 'on-page': $route.path === '/about' }"
+              >About</q-item-section
+            >
+          </q-item>
+        </q-list>
+      </q-menu>
+    </div>
   </div>
 </template>
 
@@ -75,15 +106,6 @@ export default defineComponent({
   },
   methods: {
     movePage,
-    //   movePage(path: string) {
-    //     const element = document.getElementById('move-page');
-    //     if (element !== null) {
-    //       element.click();
-    //     }
-    //     setTimeout(() => {
-    //       this.$router.push(path);
-    //     }, 1000);
-    //   },
   },
 });
 </script>
